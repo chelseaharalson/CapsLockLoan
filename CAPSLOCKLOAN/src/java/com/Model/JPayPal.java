@@ -15,7 +15,10 @@ import java.util.Locale;
 
 /**
  *
- * @author Chelsea
+ * @author Chelsea Metcalf
+ * I was unable to connect to the paypal server, so I falsified/simulated a successful and unsuccessful payment by
+ * taking the LoanAmount and dividing it by the LoanTerm. If it's an even number, then the payment was successful.
+ * If it's an odd number, then the payment was unsuccessful.
  */
 public class JPayPal {
     public String callerUID = "";
