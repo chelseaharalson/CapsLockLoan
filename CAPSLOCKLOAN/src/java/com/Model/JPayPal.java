@@ -124,7 +124,7 @@ public class JPayPal {
                      paymentError.PaymentMethod = "PayPal";
                      paymentError.ErrorDesc = fromPPAccount + " failed";
                      paymentError.insert();
-                     String html = sendHtmlPayPalEmail(DatePaid);
+                     String html = sendHtmlPayPalUNEmail(DatePaid);
                      sendReceipt(borrowerEmail, "PayPal Payment Unsuccessful", html);
                      sendReceipt(loanEmail, "PayPal Payment Unsuccessful", html);
                 }
@@ -143,7 +143,7 @@ public class JPayPal {
                      payment.PaymentMethod = "PayPal";
                      payment.ConfirmationNo = "TBA";
                      payment.insert();
-                     String html = sendHtmlPayPalEmail(DatePaid);
+                     String html = sendHtmlPayPalSuccessEmail(DatePaid);
                      sendReceipt(borrowerEmail, "PayPal Payment Successful", html);
                      sendReceipt(loanEmail, "PayPal Payment Successful", html);
                 }
@@ -182,9 +182,15 @@ public class JPayPal {
             }
     }
     
-    public String sendHtmlPayPalEmail(String DatePaid)
+    public String sendHtmlPayPalSuccessEmail(String DatePaid)
     {
-        String html = "The date paid is: " + DatePaid;
+        String html = "Thank you for your payment. This email is to confirm your payment submitted on " + DatePaid + ".";
+        return html;
+    }
+    
+    public String sendHtmlPayPalUNEmail(String DatePaid)
+    {
+        String html = "Unfortunately, we were unable to receive your payment on " + DatePaid + ". Please try again.";
         return html;
     }
    
