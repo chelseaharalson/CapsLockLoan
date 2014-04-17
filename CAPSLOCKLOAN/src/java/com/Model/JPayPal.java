@@ -184,11 +184,7 @@ public class JPayPal {
     
     public String sendHtmlPayPalEmail(String DatePaid)
     {
-        /*SimpleDateFormat sf = new SimpleDateFormat("yyyy-mm-dd");
-        String d = sf.format(DatePaid);
-        String html = "The date paid is: " + d;*/
-        String html = "hi";
-        
+        String html = "The date paid is: " + DatePaid;
         return html;
     }
    
