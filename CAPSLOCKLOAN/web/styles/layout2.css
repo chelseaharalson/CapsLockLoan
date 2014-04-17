@@ -1,0 +1,254 @@
+@import url(navi.css);
+
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('fonts/BebasNeue-webfont.eot');
+    src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/BebasNeue-webfont.woff') format('woff'),
+         url('fonts/BebasNeue-webfont.ttf') format('truetype'),
+         url('fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{overflow-y:scroll;}
+
+body{margin:0; padding:0; font-size:15px; font-family:Tahoma, Geneva, sans-serif; color:#737373; background-color:#1F1F1F;}
+
+h7{font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif; font-size:20px;}
+h8{font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif; font-size:16px;}
+
+.clear:after{content:"."; display:block; height:0; clear:both; visibility:hidden; line-height:0;}
+.clear{display:block; clear:both;}
+html[xmlns] .clear{display:block;}
+* html .clear{height:1%;}
+
+a{outline:none; text-decoration:none;}
+
+code{font-weight:normal; font-style:normal; font-family:Tahoma, Geneva, sans-serif;}
+
+.fl_left{float:left;}
+.fl_right{float:right;}
+
+img{margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}
+.imgholder, .imgl, .imgr{padding:4px; border:1px solid #D6D6D6; text-align:center;}
+.imgl{float:left; margin:0 15px 15px 0; clear:left;}
+.imgr{float:right; margin:0 0 15px 15px; clear:right;}
+
+/*----------------------------------------------HTML 5 Overrides-------------------------------------*/
+
+address, article, aside, figcaption, figure, footer, header, hgroup, nav, section{display:block; margin:0; padding:0;}
+
+q{display:block; padding:0 10px 8px 10px; color:#979797; background-color:#ECECEC; font-style:italic; line-height:normal;}
+q:before{content:'� '; font-size:26px;}
+q:after{content:' �'; font-size:26px; line-height:0;}
+
+/* ----------------------------------------------Wrapper-------------------------------------*/
+
+div.wrapper{display:block; width:100%; text-align:left;}
+
+.row1{color:#868686; background: url('../images/header-image.png') no-repeat center;}
+.row2{color:#868686; background-color:#000000;}
+.row1 a{color:#0099CC;}
+.row2 a{color:#0099CC; background-color:#000000;}
+
+.row3, .row4{color:#868686; background-image:url("../images/bg.png"); background-position:top left;}
+.row3 a, .row4 a{color:#0099CC; background-image:url("../images/bg.png");}
+
+.row1{padding:30px 0;}
+.row2{border-bottom:1px solid #E0E0E0;}
+.row3{}
+.row4{background-image:url("../images/footer_bg.gif"); background-position:top left; background-repeat:repeat-x;}
+.row5{}
+
+/*----------------------------------------------Generalise-------------------------------------*/
+
+#header, #topnav, #container, #footer, #copyright{display:block; width:960px; margin:0 auto; padding:0;}
+
+h1, h2, h3, h4, h5, h6{margin:0; padding:0; font-size:16px; font-weight:bold; line-height:normal;}
+
+address{font-style:normal;}
+
+blockquote, q{display:block; padding:8px 10px; color:#979797; background-color:#ECECEC; font-style:italic; line-height:normal;}
+blockquote:before, q:before{content:'� '; font-size:26px;}
+blockquote:after, q:after{content:' �'; font-size:26px; line-height:0;}
+
+.one_quarter, .two_quarter, .three_quarter{display:block; float:left; margin:0 0 0 20px;}
+.one_quarter{width:225px;}
+.two_quarter{width:470px;}
+.three_quarter{width:715px;}
+
+.one_third, .two_third{display:block; float:left; margin:0 0 0 30px;}
+.one_third{width:300px;}
+.two_third{width:630px;}
+
+.first, .one_quarter:first-child, .two_quarter:first-child, .three_quarter:first-child, .one_third:first-child, .two_third:first-child{margin-left:0;}
+.four_quarter, .three_third{width:100%; float:none; margin-left:0; clear:both;}
+
+/*----------------------------------------------Header-------------------------------------*/
+
+#header{}
+
+#header hgroup{float:left;}
+#header hgroup h1, #header hgroup h2{font-weight:normal; font-style:normal; text-transform:none;}
+#header hgroup h1{font-size:46px; line-height:38px;}
+#header hgroup h1 span{font-size:36px; text-transform:uppercase;}
+#header hgroup h1 a{color:#999999; font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;}
+#header hgroup h2{font-size:12px; text-align:right;}
+#header hgroup h1 different{
+	font-weight:normal;
+	color:#0099CC;
+        font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+	}
+
+#header .fl_right{margin-top:20px;}
+
+#header hgroup h3{font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif; font-size:40px; color:#000000; text-decoration:underline;}
+#header hgroup h4{font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif; font-size:20px; color:#000000;}
+
+#social{float:right;}
+#social, #social li{display:inline-block; margin:0; padding:0; list-style:none;}
+#social li{margin-left:10px;}
+#social li:first-child{margin-left:0;}
+
+/*----------------------------------------------Content Area-------------------------------------*/
+
+#container{padding:50px 0; line-height:1.6em;}
+#container h1, #container h2, #container h3, #container h4, #container h5, #container h6{margin-bottom:20px; color:#000000; background-color:#F1F1F1;}
+#container section{margin-bottom:40px;}
+#container .last{margin:0;}
+#container .more{text-align:right;}
+
+/* ------Content-----*/
+
+#container #content{float:left; width:630px; margin-bottom:0;}
+
+/* ------Comments-----*/
+
+#comments ul{margin:0 0 40px 0; padding:0; list-style:none;}
+#comments li.comment_odd, #comments li.comment_even{margin:0 0 10px 0; padding:15px; list-style:none;}
+#comments li.comment_odd{color:#666666; background-color:#F7F7F7;}
+#comments li.comment_odd a{color:#0099CC; background-color:#F7F7F7;}
+#comments li.comment_even{color:#666666; background-color:#E8E8E8;}
+#comments li.comment_even a{color:#0099CC; background-color:#E8E8E8;}
+#comments article, #comments header{display:block; width:100%;}
+#comments figure{float:right; margin:0 0 10px 10px; padding:3px; border:1px solid #DEDACB; text-align:center;}
+#comments figure img{float:inherit;}
+#comments header address{font-weight:bold;}
+#comments header time{font-size:smaller;}
+#comments article section{margin:0; padding:0;}
+#comments article section p{margin:10px 5px 10px 0; padding:0;}
+
+/* ------Right Column-----*/
+
+#container #right_column{float:right; width:300px;}
+
+aside h2{padding-bottom:8px; font-size:16px; text-transform:uppercase; border-bottom:5px solid #CCCCCC; text-align:right;}
+
+/*----------------------------------------------Footer-------------------------------------*/
+
+#footer{padding:30px 0; line-height:1.6em;}
+
+#footer section h2.title{margin-bottom:30px; font-size:13px; font-weight:normal; text-transform:uppercase; color:#666666; background-image:url("../images/bg.png");}
+
+/* ------Quick Links-----*/
+
+#footer section nav ul li{margin:5px 0 0 0; padding:0 0 5px 0; border-bottom:1px solid #D1D1D1;}
+#footer section nav ul li:first-child, #footer section nav ul li.first{margin-top:0;}
+#footer section nav ul li a{}
+
+/* ------Blogposts-----*/
+
+#footer section article header, #footer section article address, #footer section article time, #footer section article p{margin:0; padding:0;}
+#footer section article p{margin-top:10px;}
+#footer section article header h2{font-size:14px; font-weight:bold; text-transform:none; color:#868686; background-image:url("../images/bg.png");}
+#footer section article address, #footer section article time{font-size:10px; font-style:normal;}
+
+/*----------------------------------------------Copyright-------------------------------------*/
+
+#copyright{padding:10px 0;}
+#copyright, #copyright a{display:block; width:100%; color:#999999; background-color:#000000;}
+#copyright p{margin:0; padding:0;}
+
+
+
+
+/*----------------------------------------------ComboBox-------------------------------------*/
+select {
+    padding:3px;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    font-size:20px;
+    background: #f8f8f8;
+    color:#888;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select {padding-right:50px}
+}
+
+label {position:relative}
+label:after {
+    content:'<>';
+    font:11px "Consolas", monospace;
+    color:#aaa;
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform:rotate(90deg);
+    right:8px; top:2px;
+    padding:0 0 2px;
+    border-bottom:1px solid #ddd;
+    position:absolute;
+    pointer-events:none;
+}
+label:before {
+    content:'';
+    right:6px; top:0px;
+    width:20px; height:20px;
+    background:#f8f8f8;
+    position:absolute;
+    pointer-events:none;
+    display:block;
+}
+
+
+
+/*----------------------------------------------Textbox-------------------------------------*/
+ .textbox { 
+    border: 1px solid #848484; 
+    -webkit-border-radius: 30px; 
+    -moz-border-radius: 30px; 
+    border-radius: 30px; 
+    outline:0; 
+    height:23px; 
+    width: 150px; 
+    padding-left:10px; 
+    padding-right:10px; 
+  }
+  
+   .textbox2 { 
+    border: 1px solid #848484; 
+    -webkit-border-radius: 30px; 
+    -moz-border-radius: 30px; 
+    border-radius: 30px; 
+    outline:0; 
+    height:30px; 
+    width: 200px; 
+    padding-left:10px; 
+    padding-right:10px; 
+  }
