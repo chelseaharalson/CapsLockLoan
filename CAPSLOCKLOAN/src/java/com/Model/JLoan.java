@@ -61,7 +61,7 @@ public class JLoan extends JDBFunctions {
             while (resultSet.next())
             {
                 html = html + "<tr>";
-                html = html + "<td class =\"tdname\"><form action=\"loandetail.jsp\" method=\"post\"><input type=\"submit\" value=\"Select\"> &nbsp;&nbsp;" 
+                html = html + "<td class =\"tdname\"><form action=\"loandetail.jsp\" method=\"post\"><input type=\"submit\" class=\"fsSubmitButton\" value=\"Select\"> &nbsp;&nbsp;" 
                         + "<input type=\"hidden\" value=\"" + resultSet.getString("LoanID") + "\" name=\"LoanID\">"
                         + resultSet.getString("firstname") + " " + resultSet.getString("lastname") + "</form></td>";
                 html = html + "<td class =\"tddate\">" + new SimpleDateFormat("MM/dd/yyyy").format(resultSet.getDate("dateLoaned")) + "</td>";
