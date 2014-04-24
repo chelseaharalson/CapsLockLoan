@@ -184,3 +184,21 @@ p.codrops-demos a.current-demo:hover{
 		left: auto;
 	}
 }
+
+.fsSubmitButton2
+{
+    padding: 10px 20px 11px !important;
+    font-size: 21px !important;
+    background-color: #0099cc;
+    font-weight: bold;
+    text-shadow: 1px 1px #0099cc;
+    color: #ffffff;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border: 1px solid #0099cc;
+    cursor: pointer;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}

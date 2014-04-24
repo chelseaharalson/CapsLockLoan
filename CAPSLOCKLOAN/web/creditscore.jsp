@@ -31,6 +31,8 @@
       
       <header id="header" class="clear">
         <hgroup>
+            <input type="submit" class="fsSubmitButton2" value="<- Summary" onclick="window.location='summary.jsp';">
+            <br><br>
             <h4>CapsLockLoan credit score is based on the last 6 months of loan payments by the borrower.</h4>
             <br>
             <h7>A:</h7> 0 missed payments in the last 6 months

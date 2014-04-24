@@ -30,6 +30,8 @@
   <div id="footer" class="clear">
       <header id="header" class="clear">
         <hgroup>
+            <input type="submit" class="fsSubmitButton2" value="<- Summary" onclick="window.location='summary.jsp';">
+            <br><br>
             <h3>Select or Add Borrower</h3>
         </hgroup>
       </header>

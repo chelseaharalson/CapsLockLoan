@@ -32,6 +32,9 @@
   <div id="footer" class="clear">
       <header id="header" class="clear">
         <hgroup>
+            <input type="submit" class="fsSubmitButton2" value="<- Summary" onclick="window.location='summary.jsp';">
+            <br><br>
+            
         <%
             JPayment paymentInfo = new JPayment();
             JLoan loanPerson = new JLoan();
