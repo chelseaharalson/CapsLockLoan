@@ -8,7 +8,8 @@ import java.util.Scanner;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.*;
+import java.text.DateFormat;
 
 public class JCreditCard extends JDBFunctions{
     private ResultSet resultSet = null;
@@ -184,5 +185,24 @@ public class JCreditCard extends JDBFunctions{
             number = number / 10;
         }
         return number;
+    }
+    
+    public static boolean isValidExpDate(String pDate)
+    {
+        // do date conversion here of pDate
+        //String newPdate = pDate.substring(0, 3) + pDate.concat("01/20") + pDate.substring(3, 2);
+        String newPdate = pDate.substring(0, 3) + "01/20" + pDate.substring(3, 5);
+        Date expDate = null;
+        try{
+                expDate = new SimpleDateFormat("MM/dd/yyyy", Locale.ENGLISH).parse(newPdate);
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+        // get current date
+        Calendar currentDate = Calendar.getInstance();
+ 
+        // if currentDate < pDate. if before, true. if after, false.
+        return (currentDate.getTime().before(expDate));
     }
 }

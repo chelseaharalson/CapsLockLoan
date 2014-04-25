@@ -61,7 +61,16 @@ public class SendCreditPayment extends HttpServlet {
                 out.println("The credit card number is invalid!");
             }
             
-            credit.expDate = request.getParameter("expDate");
+            boolean validExp = credit.isValidExpDate(request.getParameter("expDate"));
+            if(validExp)
+            {
+                out.println("The credit card expiration date is valid!");
+                credit.ccnum = request.getParameter("expDate");
+            }
+            else
+            {
+                out.println("The credit card expiration date is invalid!");
+            }
             
             credit.csv = request.getParameter("csv");
             credit.amount = Double.parseDouble(request.getParameter("amount"));
