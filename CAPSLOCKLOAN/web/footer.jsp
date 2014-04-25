@@ -25,6 +25,7 @@
   <footer id="copyright" class="clear">
         <nav id="topnav">
         <ul class="clear">
+        <li><h8><a href="about.jsp">About</a></h8></li>
         <li><h8><a href="contact.jsp">Contact</a></h8></li>
         <li><h8><a href="privacy.jsp">Privacy Notice</a></h8></li>
         </ul>

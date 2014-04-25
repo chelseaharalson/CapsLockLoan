@@ -37,15 +37,6 @@
         <li>Chelsea Metcalf</li>
         <li class="last">Email: <a href="mailto:chelseametcalf@ufl.edu?Subject=Top%20Right%20Pixel">chelseametcalf@ufl.edu</a></li>
       </ul>
-
-
-    <!-- ########################################################################################## -->
-<!-- Footer -->
-
-    <!-- Footer -->
-
-    <!-- / Section -->
-    
   </div>
 </div>
 
