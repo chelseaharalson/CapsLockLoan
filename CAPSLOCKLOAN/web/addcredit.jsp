@@ -33,15 +33,21 @@
         <hgroup>
             <input type="submit" class="fsSubmitButton2" value="<- Summary" onclick="window.location='summary.jsp';">
             <br><br>
-            <h3>Payment Information</h3>
+            <h3>Redeem Credit</h3>
         </hgroup>
       </header>
       
-      <form action="SavePayment" method="post">
+      <form action="SaveCredit" method="post">
         <table border="0" cellpadding="10">
-            <tr><td><h8>Amount Paid</h8></td><td><input class="textbox" type="text" name="AmountPaid"></td></tr>
-            <tr><td><h8>Date Paid</h8></td><td><input class="textbox" type="text" name="DatePaid"></td></tr>
-            <tr><td><h8>Payment Method</h8></td><td><input class="textbox" type="text" name="PaymentMethod"></td></tr>
+            <tr><td><h8>Amount</h8></td><td><input class="textbox" type="text" name="Amount"></td></tr>
+            <tr><td><h8>Payment</h8></td><td><input class="textbox" type="text" name="Payment"></td></tr>
+            <tr><td><label>
+                <select id="PaymentMethod" name="PaymentMethod">
+                <option value="PayPal">PayPal</option>
+                <option value="Credit Card">Credit Card</option>
+                </select>
+            </label>
+            </td></tr>
         </table>
             <button class="btn btn-8 btn-8h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Save &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
       </form>
