@@ -55,7 +55,7 @@
                     }
                 %>
                 <br>
-                <button class="btn btn-3 btn-3b icon-star-2" onclick="javascript:document.location='creditscore.jsp'">Get Credit Score</button>
+                <button class="btn btn-3 btn-3b icon-star-2" onclick="javascript:document.location='creditscore.jsp'">Credit Score</button>
             </form>
         </hgroup>
       </header>

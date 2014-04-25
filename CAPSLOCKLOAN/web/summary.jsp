@@ -31,6 +31,10 @@
       
       <header id="header" class="clear">
         <hgroup>
+            <input type="submit" class="fsSubmitButton2" value="&nbsp;&nbsp; Add Credit &nbsp;&nbsp;" onclick="window.location='addcredit.jsp';">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" class="fsSubmitButton2" value="Redeem Credit" onclick="window.location='redeemcredit.jsp';">
+            <br><br>
             <%JPerson person = new JPerson();
             Integer personID = 0;
             personID = (Integer)session.getAttribute("LoggedInID");
@@ -49,9 +53,9 @@
         </hgroup>
       </header>
       <br>
-      <button class="btn btn-3 btn-3b icon-star-2" onclick="javascript:document.location='loanSelectBorrower.jsp'">&nbsp; &nbsp; &nbsp; Add Loan &nbsp; &nbsp; &nbsp; &nbsp;</button>
-      <br>
-      <button class="btn btn-3 btn-3b icon-star-2" onclick="javascript:document.location='creditscore.jsp'">Get Credit Score</button>
+      <button class="btn btn-3 btn-3b icon-star-2" onclick="javascript:document.location='loanSelectBorrower.jsp'">&nbsp; &nbsp; Add Loan &nbsp; &nbsp;</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button class="btn btn-3 btn-3b icon-star-2" onclick="javascript:document.location='creditscore.jsp'">Credit Score</button>
       
 
 <!-- Footer -->
