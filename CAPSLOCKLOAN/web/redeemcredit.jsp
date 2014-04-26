@@ -44,7 +44,7 @@
             <tr><td><label>
                 <select id="PaymentMethod" name="PaymentMethod">
                 <option value="PayPal">PayPal</option>
-                <option value="Credit Card">Credit Card</option>
+                <option value="Credit">Credit</option>
                 </select>
             </label>
             </td></tr>

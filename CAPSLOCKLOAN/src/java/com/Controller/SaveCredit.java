@@ -12,13 +12,16 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.Model.JCreditCard;
+import java.sql.ResultSet;
+import com.Model.JDBFunctions;
+import com.Model.JPerson;
+import java.sql.SQLException;
 
 /**
  *
  * @author Chelsea
  */
-public class SendCreditPayment extends HttpServlet {
+public class SaveCredit extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,56 +36,30 @@ public class SendCreditPayment extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            JCreditCard credit = new JCreditCard();
-            
-            credit.firstName = request.getParameter("firstName");
-            credit.lastName = request.getParameter("lastName");
-            credit.email = request.getParameter("email");
-            credit.phoneNo = request.getParameter("phoneNo");
-            credit.address1 = request.getParameter("address1");
-            credit.address2 = request.getParameter("address2");
-            credit.city = request.getParameter("city");
-            credit.state = request.getParameter("state");
-            credit.zipcode = request.getParameter("zipcode");
-            credit.country = request.getParameter("country");
-            credit.cctype = request.getParameter("cctype");
-            
-            
-            boolean valid = credit.isValid(Long.parseLong(request.getParameter("ccnum")));
-            if(valid)
+            /*if(request.getParameter("PaymentMethod").equals("CreditCard"))
             {
-                out.println("The credit card number is valid!");
-                credit.ccnum = request.getParameter("ccnum");
+                response.sendRedirect("paycredit.jsp");
             }
             else
             {
-                out.println("The credit card number is invalid!");
-            }
-            
-            boolean validExp = credit.isValidExpDate(request.getParameter("expDate"));
-            if(validExp)
-            {
-                out.println("The credit card expiration date is valid!");
-                credit.ccnum = request.getParameter("expDate");
-            }
-            else
-            {
-                out.println("The credit card expiration date is invalid!");
-            }
-            
-            credit.csv = request.getParameter("csv");
-            credit.amount = Double.parseDouble(request.getParameter("amount"));
-            
+                response.sendRedirect("summary.jsp");
+            }*/
+            JPerson person = new JPerson();
+            person.session = request.getSession(true);
+            String sqlStatement = "UPDATE person SET credit = " 
+                    + Double.parseDouble(request.getParameter("Amount")) 
+                    + " WHERE personID = "
+                    + person.getLoginID();        
             try
             {
-                out.println(credit.insert());
+                person.execute(sqlStatement);
+                response.sendRedirect("addcredit.jsp");
             }
-            catch(Exception e)
+            catch(SQLException e)
             {
-                out.println("Save Credit Payment: " + e);
+                out.println(e);
             }
             
-            //response.sendRedirect("summary.jsp");
         }
     }
 

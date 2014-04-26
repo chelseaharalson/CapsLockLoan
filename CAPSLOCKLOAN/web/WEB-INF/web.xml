@@ -40,6 +40,10 @@
         <servlet-name>SendCreditPayment</servlet-name>
         <servlet-class>com.Controller.SendCreditPayment</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SaveCredit</servlet-name>
+        <servlet-class>com.Controller.SaveCredit</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login/*</url-pattern>
@@ -79,6 +83,10 @@
     <servlet-mapping>
         <servlet-name>SendCreditPayment</servlet-name>
         <url-pattern>/SendCreditPayment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SaveCredit</servlet-name>
+        <url-pattern>/SaveCredit</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
