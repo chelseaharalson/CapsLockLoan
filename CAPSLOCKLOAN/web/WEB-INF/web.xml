@@ -48,6 +48,10 @@
         <servlet-name>RedeemCredit</servlet-name>
         <servlet-class>com.Controller.RedeemCredit</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProcessCredit</servlet-name>
+        <servlet-class>com.Controller.ProcessCredit</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login/*</url-pattern>
@@ -95,6 +99,10 @@
     <servlet-mapping>
         <servlet-name>RedeemCredit</servlet-name>
         <url-pattern>/RedeemCredit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcessCredit</servlet-name>
+        <url-pattern>/ProcessCredit</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

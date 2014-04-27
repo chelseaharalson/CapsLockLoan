@@ -1,24 +1,26 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package com.Controller;
 
+import com.Model.JDBFunctions;
+import com.Model.JCredit;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.Model.JLoan;
-import java.util.*;
-import java.text.*;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Chelsea
  */
-@WebServlet(name = "SaveLoan", urlPatterns = {"/SaveLoan"})
-public class SaveLoan extends HttpServlet {
+public class ProcessCredit extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,43 +35,34 @@ public class SaveLoan extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SaveLoan</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SaveLoan at " + request.getContextPath() + "</h1>");
-
-            JLoan loan = new JLoan(); 
-            loan.session = request.getSession(true);
-            loan.LenderID = loan.getLoginID();
-            loan.BorrowerID = loan.getBorrowerID();
-            loan.LoanAmount = Double.parseDouble(request.getParameter("LoanAmount"));
             
-            try
-            {
-                loan.DateLoaned = new SimpleDateFormat("mm/dd/yyyy", Locale.ENGLISH).parse(request.getParameter("DateLoaned"));
-            }
-            catch(Exception e){
-                System.out.println(e);
-            }
-            
-            loan.LoanTerm = Integer.parseInt(request.getParameter("LoanTerm"));
-            
-            loan.PaymentMethod = request.getParameter("PayMethod");
-            
-            try
-            {
-                out.println(loan.insert());
+            try{
+                JDBFunctions db = new JDBFunctions();
+                ResultSet rs = null;
+                String sql;
+                
+                sql = "SELECT LoanID, LoanAmount, LoanTerm, dateLoaned, P.ppusername AS ppFrom, PP.ppusername, P.email AS borrowerEmail, PP.email AS loanEmail FROM Loans AS L " + 
+                "JOIN Person AS P ON L.BorrowerID = P.personID " + 
+                "JOIN Person AS PP ON L.LenderID = PP.personID " + 
+                "WHERE PaymentMethod = 'cllCredit'";
+                
+                rs = db.select(sql);
+                
+                //if(rs.first())
+                {
+                    while(rs.next())
+                    {
+                        JCredit cllCredit = new JCredit();
+                        out.println(cllCredit.processCredit(rs.getInt("LoanID"), rs.getDouble("LoanAmount") / rs.getInt("LoanTerm"), request.getParameter("date"), rs.getString("borrowerEmail"), rs.getString("loanEmail")));
+                    }
+                }
             }
             catch(Exception e)
             {
-                System.out.println("Save Loan: " + e);
+                System.out.println(e);
             }
+            response.sendRedirect("admin.jsp");
             
-            response.sendRedirect("summary.jsp");
         }
     }
 

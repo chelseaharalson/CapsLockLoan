@@ -43,7 +43,7 @@
         <button class="btn btn-8 btn-8h" onclick="javascript:document.location='SendEmail'">Test Email</button>
         <br><br>
         <!-- <button class="btn btn-8 btn-8h" onclick="javascript:document.location='ProcessPayPal'">Process PayPal</button> -->
-        <form action="ProcessPayPal" method="post">
+        <form action="ProcessCredit" method="post">
             <h4>Enter Date: &nbsp;</h4><input class="textbox2" type="text" name="date"> 
             <%
                 if(request.getParameter("date") != null)
@@ -51,7 +51,7 @@
                     out.println("PayPal: " + request.getParameter("date"));
                 }
             %>
-            <button class="btn btn-8 btn-8h" onclick="javascript:document.location='admin.jsp'">Process PayPal</button>
+            <button class="btn btn-8 btn-8h" onclick="javascript:document.location='admin.jsp'">Process Credit</button>
         </form>
         <br>
         <form action="LogoutAdmin" style="display: inline" method="post">

@@ -31,7 +31,7 @@
   <div id="footer" class="clear">
       <header id="header" class="clear">
         <hgroup>
-            <h3>User Information</h3>
+            <h3>Loan Information</h3>
         </hgroup>
       </header>
       
@@ -40,6 +40,12 @@
             <tr><td><h8>Loan Amount</h8></td><td><input class="textbox" type="text" name="LoanAmount"></td></tr>
             <tr><td><h8>Date Loaned</h8></td><td><input class="textbox" type="text" name="DateLoaned"></td></tr>
             <tr><td><h8>Loan Term</h8></td><td><input class="textbox" type="text" name="LoanTerm"></td></tr>
+            <tr><td><label>
+                <select name="PayMethod">
+                <option value="cllCredit">CapsLockLoan Credit</option>
+                <option value="Invoice">Invoice</option>
+                </select>
+            </label></td></tr>
         </table>
             <button class="btn btn-8 btn-8h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Save &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
       </form>

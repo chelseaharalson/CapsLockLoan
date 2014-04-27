@@ -16,18 +16,20 @@ public class JLoan extends JDBFunctions {
     public double LoanAmount;
     public Date DateLoaned;
     public Integer LoanTerm;
+    public String PaymentMethod;
     private ResultSet resultSet = null;
     
     public String insert() throws SQLException
     {
         String sql;
         SimpleDateFormat sf = new SimpleDateFormat("yyyy-mm-dd");
-        sql = "Insert into Loans(LenderID, BorrowerID, LoanAmount, DateLoaned, LoanTerm) values("
+        sql = "Insert into Loans(LenderID, BorrowerID, LoanAmount, DateLoaned, LoanTerm, PaymentMethod) values("
                 + LenderID + ", "
                 + BorrowerID + ", "
                 + "'" + LoanAmount + "', "
                 + "'" + sf.format(DateLoaned) + "', "
-                + LoanTerm
+                + LoanTerm + ", "
+                + "'" + PaymentMethod + "' "
                 + ")"
                 ;
             try
