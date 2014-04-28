@@ -37,6 +37,12 @@
         </hgroup>
       </header>
       
+    <script language="JavaScript" src="http://j.maxmind.com/app/geoip.js"></script>
+    Country Name:
+    <script language="JavaScript">
+        document.write(geoip_country_name());   
+    </script>
+      
       <form action="SaveCredit" method="post">
         <table border="0" cellpadding="10">
             <tr><td><h8>Amount</h8></td><td><input class="textbox" type="text" name="Amount"></td></tr>
@@ -55,4 +61,14 @@
 
         <%@include file="footer.jsp"%>
     </body>
+    
+        <script language="JavaScript">
+        if(geoip_country_name() != 'United States')
+        {
+            alert("This function is not available outside the United States");
+            history.go(-1);
+        };
+        
+    </script>
+    
 </html>
