@@ -24,6 +24,7 @@ public class JPerson extends JDBFunctions {
     public boolean active;
     public String ppusername;
     public String pppassword;
+    public double credit;
 
     public Integer insert() throws SQLException
     {
@@ -83,6 +84,7 @@ public class JPerson extends JDBFunctions {
                 zipcode = resultSet.getString("zipcode");
                 ppusername = resultSet.getString("ppusername");
                 pppassword = resultSet.getString("pppassword");
+                credit = resultSet.getDouble("credit");
             }
         }
         catch(SQLException e)

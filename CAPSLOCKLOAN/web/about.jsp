@@ -34,11 +34,11 @@
         </hgroup>
       </header>
       <ul>
-        <li>CapsLockLoan tracks loans and payments between a loaner and a borrower.
-        CapsLockLoan will email both the borrower and loaner automatically reminding each user about the loan.
+        <li>CapsLockLoan tracks loans and payments between a lender and a borrower.
+        CapsLockLoan will email both the borrower and lender automatically reminding each user about the loan.
         The point of CapsLockLoan is to eliminate awkwardness in reminding someone that they owe you money.
         Monthly statements are sent out instead.
-        The borrower can pay back the loaner using either PayPal or entering in their credit card information.
+        The borrower can pay back the lender using either PayPal or entering in their credit card information.
         You can also view the credit score from the borrower by each loan individually or all of the loans total.</li>
       </ul>
   </div>

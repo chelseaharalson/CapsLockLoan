@@ -23,46 +23,22 @@
         </noscript>
     </head>
     <body>
-<!-- content -->
 
-    <!-- content body -->
-    <!-- ########################################################################################## --> 
     <div class="wrapper row3">
   <div id="footer" class="clear">
       <header id="header" class="clear">
         <hgroup>
-            <input type="submit" class="fsSubmitButton2" value="<- Summary" onclick="window.location='summary.jsp';">
+            <input type="submit" class="fsSubmitButton2" value="<- Credit" onclick="window.location='paycredit.jsp';">
             <br><br>
-            <h3>Redeem Credit</h3>
+            <h3>Credit Card Invalid</h3>
         </hgroup>
       </header>
-
-    <script language="JavaScript" src="http://j.maxmind.com/app/geoip.js"></script>
-    Country Name:
-    <script language="JavaScript">
-        document.write(geoip_country_name());   
-    </script>
       
-      <form action="RedeemCredit" method="post">
-        <table border="0" cellpadding="10">
-            <tr><td><h8>Amount</h8></td><td><input class="textbox" type="text" name="Amount"></td></tr>
-        </table>
-            <button class="btn btn-8 btn-8h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Save &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-      </form>
+      Please go back and re-enter in credit card information.
     
   </div>
 </div>
 
         <%@include file="footer.jsp"%>
     </body>
-    
-    <script language="JavaScript">
-        if(geoip_country_name() != 'United States')
-        {
-            alert("This function is not available outside the United States");
-            history.go(-1);
-        };
-        
-    </script>
-    
 </html>

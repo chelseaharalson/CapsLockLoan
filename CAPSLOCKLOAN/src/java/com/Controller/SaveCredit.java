@@ -46,13 +46,20 @@ public class SaveCredit extends HttpServlet {
             try
             {
                 person.execute(sqlStatement);
-                response.sendRedirect("addcredit.jsp");
             }
             catch(SQLException e)
             {
                 out.println(e);
             }
             
+            if(request.getParameter("PaymentMethod").equals("Credit"))
+            {
+                response.sendRedirect("paycredit.jsp");
+            }
+            else
+            {
+                response.sendRedirect("addcredit.jsp");
+            }
         }
     }
 

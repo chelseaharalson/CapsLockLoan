@@ -4,6 +4,7 @@
     <%@page import="com.Model.JPerson"%>
     <%@page import="com.Model.JLoan"%>
     <%@page import="javax.servlet.http.HttpSession"%>
+    <%@page import="java.text.*;"%>
     <head>
 	<meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
@@ -39,12 +40,15 @@
             Integer personID = 0;
             personID = (Integer)session.getAttribute("LoggedInID");
             person.getUserInfo(personID);
+            DecimalFormat df = new DecimalFormat("0.00");
             %>
             <h3><%out.println(person.firstname + " " + person.lastname);%></h3>
             <%
             out.println(person.address1);
             out.println("<br>");
             out.println(person.city + ", " + person.state + " " + person.zipcode);
+            out.println("<br>");
+            out.println("Credit: " + df.format(person.credit));
             out.println("<br><br>");
             %>
             <%JLoan loan = new JLoan();

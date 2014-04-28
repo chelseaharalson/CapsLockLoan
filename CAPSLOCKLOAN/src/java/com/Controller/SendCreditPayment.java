@@ -73,14 +73,23 @@ public class SendCreditPayment extends HttpServlet {
             credit.csv = request.getParameter("csv");
             credit.amount = Double.parseDouble(request.getParameter("amount"));
             
-            try
+            if(valid && validExp)
             {
-                out.println(credit.insert());
+                response.sendRedirect("addcredit.jsp");
+            }
+            else
+            {
+                response.sendRedirect("errorcredit.jsp");
+            }
+            
+            /*try
+            {
+                //out.println(credit.insert());
             }
             catch(Exception e)
             {
                 out.println("Save Credit Payment: " + e);
-            }
+            }*/
             
             //response.sendRedirect("summary.jsp");
         }
